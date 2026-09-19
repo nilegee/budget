@@ -1041,6 +1041,54 @@
     .category-badge { border-radius: 13px; }
     @media (min-width: 760px) { .main-content { max-width: 1280px; } .hero-summary { gap: 22px; } }
     @media (max-width: 759px) { .welcome-row h2 { font-size: 3.05rem; } body::before { opacity: .18; } }
+    /* Bleeding-edge household UI: bold type, tactile data, quiet chrome. */
+    :root {
+      --bg: #e9e7de;
+      --surface: #f7f6ef;
+      --surface-2: #dedbd0;
+      --text: #181719;
+      --muted: #68636a;
+      --line: #c9c5bb;
+      --brand: #cc5c80;
+      --brand-2: #dfff32;
+      --brand-3: #ff9b70;
+      --ink-soft: #332744;
+      --shadow: 0 18px 0 rgba(24,23,25,.07), 0 28px 60px rgba(24,23,25,.08);
+    }
+    body { letter-spacing: -.01em; }
+    .topbar { border-bottom: 1px solid var(--text); }
+    .topbar::after { content: "LIVE HOUSEHOLD LEDGER"; position: absolute; right: 24px; bottom: -22px; color: var(--muted); font: 700 9px/1 ui-monospace, SFMono-Regular, monospace; letter-spacing: .14em; }
+    .app-shell { max-width: 1440px; margin: 0 auto; }
+    .main-content { padding-top: 22px; }
+    .welcome-row { display: grid; grid-template-columns: minmax(0, 1.3fr) auto; align-items: end; gap: 28px; min-height: 212px; border-bottom: 1px solid var(--text); }
+    .welcome-row::before { color: var(--text); border-left: 4px solid var(--brand); padding-left: 10px; }
+    .welcome-row h2 { font-size: clamp(3rem, 7vw, 7.6rem); line-height: .82; max-width: 8ch; letter-spacing: -.09em; }
+    .welcome-row h2 span { color: var(--brand); }
+    .welcome-row p { font-size: .95rem; max-width: 24rem; }
+    .welcome-row .primary-button { margin-bottom: 16px; }
+    .hero-summary { margin-top: 28px; gap: 14px; }
+    .summary-card, .split-panel, .panel { border-radius: 10px; box-shadow: none; }
+    .summary-card { border: 1px solid var(--text); box-shadow: 10px 10px 0 var(--brand-2); }
+    .summary-card::after { border-radius: 0; width: 420px; height: 420px; right: -180px; bottom: -250px; border-color: rgba(255,255,255,.2); box-shadow: 0 0 0 42px rgba(255,255,255,.04), 0 0 0 84px rgba(255,255,255,.025); transform: rotate(25deg); }
+    .split-panel { border: 1px solid var(--text); background: var(--surface); }
+    .panel { border: 1px solid var(--line); }
+    .panel-header { border-bottom: 1px solid var(--text); }
+    .panel-header h2 { font-size: clamp(1.25rem, 2vw, 1.8rem); letter-spacing: -.06em; }
+    .tab-bar { border-radius: 10px; border: 1px solid var(--text); }
+    .tab-button { border-radius: 6px; }
+    .tab-button.active { background: var(--brand-2); color: var(--text); }
+    .primary-button { border: 1px solid var(--text); box-shadow: 4px 4px 0 var(--text); }
+    .primary-button:hover { transform: translate(2px, 2px); box-shadow: 2px 2px 0 var(--text); }
+    .secondary-button, .month-picker { border-radius: 8px; border-color: var(--text); }
+    .category-badge { border-radius: 6px; }
+    @media (max-width: 759px) {
+      .topbar::after { display: none; }
+      .welcome-row { display: flex; flex-direction: column; align-items: flex-start; min-height: auto; gap: 16px; padding-bottom: 22px; }
+      .welcome-row h2 { font-size: 4rem; }
+      .welcome-row .primary-button { margin-bottom: 0; }
+      .hero-summary { margin-top: 22px; }
+      .summary-card { box-shadow: 6px 6px 0 var(--brand-2); }
+    }
   </style>
 <!-- Bundled font licenses
 Copyright 2021 The Outfit Project Authors (https://github.com/Outfitio/Outfit-Fonts)
