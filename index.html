@@ -996,6 +996,51 @@
       .app-shell { padding-bottom: calc(var(--nav-height) + env(safe-area-inset-bottom) + 24px); }
     }
 
+    /* Mariem's household command center: expressive, warm, and easy to scan. */
+    :root {
+      --bg: #eeece3;
+      --surface: #f9f8f2;
+      --surface-2: #e6e3d8;
+      --text: #27232a;
+      --muted: #77736d;
+      --line: #d9d5c9;
+      --brand: #c95e80;
+      --brand-2: #d9fa45;
+      --brand-3: #fb9968;
+      --ink-soft: #4b3c55;
+      --shadow: 0 18px 48px rgba(39,35,42,.09);
+      --radius: 22px;
+    }
+    html { background: var(--bg); }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Manrope, ui-sans-serif, system-ui, sans-serif;
+    }
+    body::before { content: ""; position: fixed; inset: 0; pointer-events: none; opacity: .28; background-image: radial-gradient(rgba(39,35,42,.14) .7px, transparent .7px); background-size: 9px 9px; mask-image: linear-gradient(to bottom, rgba(0,0,0,.55), transparent 55%); }
+    .topbar { background: rgba(249,248,242,.84); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+    .app-title h1 { font-size: clamp(1.1rem, 1.5vw, 1.35rem); letter-spacing: -.04em; }
+    .app-title p { color: var(--muted); }
+    .month-picker { border-radius: 16px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 5px 14px rgba(39,35,42,.05); }
+    .welcome-row { padding-top: 18px; }
+    .welcome-row::before { content: "YOUR HOUSEHOLD, IN ONE PLACE"; display: block; margin-bottom: 14px; color: var(--brand); font-size: .68rem; font-weight: 800; letter-spacing: .16em; }
+    .welcome-row h2 { font-size: clamp(2.45rem, 5vw, 4.9rem); line-height: .95; letter-spacing: -.075em; max-width: 9ch; }
+    .welcome-row h2 span { color: var(--brand); }
+    .welcome-row p { max-width: 32rem; color: var(--muted); font-size: 1rem; }
+    .primary-button { background: var(--brand-2); color: var(--text); border-color: var(--brand-2); border-radius: 14px; box-shadow: 0 7px 0 rgba(39,35,42,.15); font-weight: 800; }
+    .primary-button:hover { transform: translateY(-2px); box-shadow: 0 9px 0 rgba(39,35,42,.15); }
+    .summary-card { background: var(--ink-soft); border-radius: 26px; box-shadow: 0 18px 0 rgba(39,35,42,.08), var(--shadow); overflow: hidden; position: relative; }
+    .summary-card::after { content: ""; position: absolute; width: 360px; height: 360px; right: -130px; bottom: -190px; border: 1px solid rgba(255,255,255,.12); border-radius: 50%; box-shadow: 0 0 0 36px rgba(255,255,255,.025), 0 0 0 72px rgba(255,255,255,.02); pointer-events: none; }
+    .summary-card > * { position: relative; z-index: 1; }
+    .panel { border-radius: 26px; background: rgba(249,248,242,.9); border-color: var(--line); box-shadow: var(--shadow); }
+    .panel-header h2 { letter-spacing: -.045em; }
+    .split-panel { background: var(--surface-2); }
+    .empty-state { color: var(--muted); }
+    .tab-bar { background: var(--ink-soft); border: 1px solid rgba(255,255,255,.16); box-shadow: 0 14px 32px rgba(39,35,42,.18); }
+    .tab-button.active { background: var(--brand-2); color: var(--text); }
+    .category-badge { border-radius: 13px; }
+    @media (min-width: 760px) { .main-content { max-width: 1280px; } .hero-summary { gap: 22px; } }
+    @media (max-width: 759px) { .welcome-row h2 { font-size: 3.05rem; } body::before { opacity: .18; } }
   </style>
 <!-- Bundled font licenses
 Copyright 2021 The Outfit Project Authors (https://github.com/Outfitio/Outfit-Fonts)
