@@ -286,6 +286,52 @@ h1, h2, h3, p { margin: 0; }
 .stat-sub.up { color: #5eead4; }
 .stat-sub.down { color: #fca5a5; }
 
+
+/* ---- Our Family Savings: the featured, colourful hero card ---- */
+.hero-stats .stat-savings {
+  grid-column: 1 / -1;
+  position: relative;
+  overflow: hidden;
+  padding: 18px 18px 16px;
+  border-radius: 24px;
+  color: #04201a;
+  background: linear-gradient(135deg, #34d399 0%, #10e5a5 28%, #22d3ee 62%, #818cf8 100%);
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 18px 40px -14px rgba(16, 229, 165, 0.55),
+    0 6px 18px -6px rgba(129, 140, 248, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+.hero-stats .stat-savings:hover { background: linear-gradient(135deg, #3ee0a8 0%, #19f0b0 28%, #2adcf5 62%, #8f9cff 100%); transform: translateY(-2px); }
+.stat-savings .savings-glow {
+  position: absolute;
+  inset: -40% -20% auto auto;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.55) 0%, transparent 65%);
+  pointer-events: none;
+}
+.stat-savings span { opacity: 1; }
+.stat-savings .savings-title { display: inline-flex; align-items: center; gap: 6px; font-size: 0.85rem; font-weight: 800; letter-spacing: 0.03em; text-transform: uppercase; color: rgba(4, 32, 26, 0.82); }
+.stat-savings .savings-coin { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: rgba(255, 255, 255, 0.55); font-size: 0.8rem; color: #047857; }
+.stat-savings .stat-arrow { color: #04201a; background: rgba(255, 255, 255, 0.5); width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; font-size: 0.9rem; }
+.stat-savings .savings-amount {
+  font: 800 clamp(2.1rem, 11vw, 2.9rem)/1.05 var(--font-display);
+  letter-spacing: -0.035em;
+  margin-top: 8px;
+  color: #02150f;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.35);
+}
+.stat-savings .savings-amount span { display: inline; font: inherit; letter-spacing: inherit; opacity: 1; }
+.stat-savings .savings-foot { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.stat-savings .savings-foot small { font-size: 0.78rem; font-weight: 800; padding: 4px 10px; border-radius: 99px; background: rgba(255, 255, 255, 0.55); color: #04201a; }
+.stat-savings .savings-gain.up { color: #047857; }
+.stat-savings .savings-gain.down { color: #b91c1c; }
+.stat-savings .savings-bar { margin-top: 12px; height: 8px; border-radius: 99px; background: rgba(4, 32, 26, 0.18); overflow: hidden; }
+.stat-savings .savings-bar i { display: block; height: 100%; border-radius: inherit; background: linear-gradient(90deg, #fff, #fef08a); box-shadow: 0 0 12px rgba(255, 255, 255, 0.8); transition: width 1.2s var(--ease-out); }
+.hero-stats .stat-wide { grid-column: 1 / -1; }
+
 /* Pot Mascot Animation & Physics */
 .pot-wrap { position: relative; width: 100%; display: grid; place-items: center; }
 .pot { width: 100%; height: auto; overflow: visible; filter: drop-shadow(0 14px 28px rgba(0, 0, 0, 0.45)); }

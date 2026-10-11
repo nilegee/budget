@@ -63,6 +63,28 @@ export function Home() {
 
         {/* 2x2 Unified Bento Stat Grid: Daily Health + Family Savings */}
         <div class="hero-stats unified-stats-grid">
+          <div class="stat stat-savings" onClick={() => go("savings")} role="button" tabIndex={0} aria-label="Open our family savings">
+            <div class="savings-glow" aria-hidden="true" />
+            <div class="stat-head-row">
+              <span class="savings-title"><span class="savings-coin" aria-hidden="true">✦</span> Our Family Savings</span>
+              <span class="stat-arrow">↗</span>
+            </div>
+            <b class="savings-amount">
+              {savings ? <Count value={savings.amount} format={(n) => money(n)} /> : "Start our savings"}
+            </b>
+            <div class="savings-foot">
+              {gain && (
+                <small class={`savings-gain ${gain.delta >= 0 ? "up" : "down"}`}>
+                  {gain.delta >= 0 ? "▲ +" : "▼ -"}{money(Math.abs(gain.delta))}
+                </small>
+              )}
+              {tp && <small class="savings-target">{Math.round(tp.pct)}% of our goal</small>}
+            </div>
+            {tp && (
+              <div class="savings-bar" aria-hidden="true"><i style={{ width: `${Math.min(100, Math.max(3, tp.pct))}%` }} /></div>
+            )}
+          </div>
+
           <div class="stat">
             <span>Today's family breathing room</span>
             <b><Count value={pace.safeToday} format={(n) => money(n)} /></b>
@@ -73,22 +95,7 @@ export function Home() {
             <b><Count value={Math.abs(pace.remaining)} format={(n) => money(n)} /></b>
           </div>
 
-          <div class="stat stat-savings" onClick={() => go("savings")} role="button" tabIndex={0} aria-label="Open our family savings">
-            <div class="stat-head-row">
-              <span>Our Family Savings</span>
-              <span class="stat-arrow">↗</span>
-            </div>
-            <b>
-              {savings ? <Count value={savings.amount} format={(n) => money(n)} /> : "Start savings"}
-            </b>
-            {gain && (
-              <small class={`stat-sub ${gain.delta >= 0 ? "up" : "down"}`}>
-                {gain.delta >= 0 ? "▲ +" : "▼ -"}{money(Math.abs(gain.delta))}
-              </small>
-            )}
-          </div>
-
-          <div class="stat stat-runway" onClick={() => go("savings")} role="button" tabIndex={0} aria-label="Open our family runway">
+          <div class="stat stat-runway stat-wide" onClick={() => go("savings")} role="button" tabIndex={0} aria-label="Open our family runway">
             <div class="stat-head-row">
               <span>Family Runway Buffer</span>
               <span class="stat-arrow">↗</span>
