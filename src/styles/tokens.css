@@ -1,0 +1,84 @@
+@property --c1 { syntax: "<color>"; inherits: true; initial-value: #0e9f94; }
+@property --c2 { syntax: "<color>"; inherits: true; initial-value: #2563eb; }
+
+:root {
+  color-scheme: light dark;
+
+  --font-display: "Bricolage Grotesque Variable", -apple-system, BlinkMacSystemFont, ui-rounded, sans-serif;
+  --font-body: "Figtree Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* High-Chroma OKLCH Curated Duality Palette */
+  --ink: #070312;
+  --orchid: #a855f7;
+  --orchid-neon: #c084fc;
+  --mango: #f59e0b;
+  --coral: #f43f5e;
+  --aqua: #10e5a5;
+  --cyber-emerald: #10e5a5;
+  --sky: #38bdf8;
+  --good: #10e5a5;
+  --warn: #fbbf24;
+  --bad: #f87171;
+
+  /* Rich Obsidian Canvas & Liquid Glassmorphic tokens */
+  --bg: #080414;
+  --surface: rgba(22, 14, 44, 0.76);
+  --surface-solid: #130a2a;
+  --surface-2: rgba(34, 22, 66, 0.82);
+  --surface-glass: rgba(26, 16, 52, 0.68);
+  --glass-border: rgba(255, 255, 255, 0.16);
+  --glass-border-subtle: rgba(255, 255, 255, 0.08);
+  --text: #f8f6ff;
+  --text-muted: #aba2cc;
+  --muted: #9e93c4;
+  --line: rgba(85, 65, 135, 0.45);
+  
+  --shadow-sm: 0 2px 8px -2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.35) inset, 0 24px 60px -16px rgba(0, 0, 0, 0.75);
+  --shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.45) inset, 0 32px 70px -16px rgba(0, 0, 0, 0.9);
+  --shadow-dock: 0 30px 70px -18px rgba(0, 0, 0, 0.92), 0 0 0 1px rgba(255, 255, 255, 0.14);
+
+  --r-sm: 14px;
+  --r-md: 20px;
+  --r-lg: 30px;
+  --r-full: 9999px;
+
+  --spring: linear(0, 0.009, 0.035 2.1%, 0.141, 0.281 6.7%, 0.723 12.9%, 0.938 16.7%, 1.017, 1.077, 1.121, 1.149 24.3%, 1.159, 1.163, 1.161, 1.154 29.9%, 1.129 32.8%, 1.051 39.6%, 1.017 43.1%, 0.991, 0.977 51%, 0.974 53.8%, 0.975 57.1%, 0.997 69.8%, 1.003 76.9%, 1.004 83.8%, 1);
+  --ease-out: cubic-bezier(.16, 1, .3, 1);
+  --ease-elastic: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --nav-h: 66px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0717;
+    --surface: rgba(24, 18, 48, 0.75);
+    --surface-solid: #16102e;
+    --surface-2: rgba(36, 28, 68, 0.75);
+    --surface-glass: rgba(28, 20, 54, 0.6);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --glass-border-subtle: rgba(255, 255, 255, 0.06);
+    --text: #f6f3ff;
+    --text-muted: #aba2cb;
+    --muted: #9f96c2;
+    --line: rgba(75, 60, 115, 0.45);
+    --good: #34d399;
+    --warn: #fbbf24;
+    --bad: #f87171;
+    --shadow: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 20px 45px -22px rgba(0, 0, 0, 0.75);
+    --shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.08) inset, 0 28px 56px -20px rgba(0, 0, 0, 0.88);
+    --shadow-dock: 0 30px 70px -18px rgba(0, 0, 0, 0.9), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  }
+}
+
+:root {
+  /* Per-phone dynamic user accent */
+  --accent-from: #4f46e5;
+  --accent-to: #06b6d4;
+  --accent: linear-gradient(135deg, var(--accent-from), var(--accent-to));
+  --accent-glow: radial-gradient(circle, color-mix(in oklch, var(--accent-from) 40%, transparent) 0%, transparent 70%);
+  --link: color-mix(in oklch, var(--accent-from) 65%, var(--text));
+}
